@@ -33,7 +33,7 @@ export class WolfAnim extends HTMLElement {
           position: absolute;
           left: 50%;
           top: 50%;
-          -webkit-transform: translate(-58%, -41%) ;
+          -webkit-transform: translate(-18%, -51%) scale(1.4) ;
         }
       </style>
       <svg
@@ -134,4 +134,4 @@ export class WolfAnim extends HTMLElement {
   connectedCallback() {}
 }
 
-customElements.define('wolf-anim2', WolfAnim)
+customElements.define('wolf-anim3', WolfAnim)

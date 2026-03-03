@@ -4,105 +4,50 @@ export class WolfAnim extends HTMLElement {
     this.attachShadow({ mode: 'open' })
     this.shadowRoot.innerHTML = `
       <style>
-        :host {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          width: 96vw;
-          height: 96vh;
-          position: relative;
-          overflow: hidden;
-        }
-        .load {
+      :host {
+        display: flex;
+        justify-content: center;
+        align-items: center;  
+        width: 96vw;
+        height: 96vh;
+        position: relative;
+        overflow: hidden;
+      }
+        svg {
           position: absolute;
           left: 50%;
           top: 50%;
           -webkit-transform: translate(-50%, -50%);
-          animation: rotate 6s linear infinite;
         }
-
-        @keyframes rotate {
-          from {
-            transform: translate(-50%, -50%) rotate(0deg);
-          }
-          to {
-            transform: translate(-50%, -50%) rotate(360deg);
-          }
-        }
-        .wolf {
+        .wolf{
           position: absolute;
           left: 50%;
           top: 50%;
-          -webkit-transform: translate(-58%, -41%) ;
+          -webkit-transform: translate(-58%, -32%) scale(1.1) ;
         }
       </style>
+      <svg xmlns="http://www.w3.org/2000/svg" width="230" height="230" viewBox="0 0 230 230" fill="none">
+        <circle cx="115" cy="115" r="115" fill="#4A4A4A"/>
+      </svg>
       <svg
-        class="load"
-        width="231"
-        height="231"
-        viewBox="0 0 231 231"
-        fill="none"
         xmlns="http://www.w3.org/2000/svg"
+        width="230"
+        height="230"
+        viewBox="0 0 230 230"
+        fill="none"
       >
-        <path
-          opacity="0.4"
-          d="M136.274 23.3015L140.882 2.81513C124.195 -0.938305 106.683 -0.938449 89.9961 2.81513L94.6045 23.3015C108.264 20.2287 122.615 20.2287 136.274 23.3015Z"
-          fill="white"
-        />
-        <path
-          d="M94.6025 207.577L89.9951 228.064C106.682 231.817 124.194 231.817 140.881 228.064L136.272 207.577C122.613 210.65 108.262 210.65 94.6025 207.577Z"
-          fill="white"
-        />
-        <path
-          opacity="0.7"
-          d="M207.575 136.274L228.062 140.882C231.815 124.195 231.815 106.683 228.062 89.9961L207.575 94.6045C210.648 108.264 210.648 122.615 207.575 136.274Z"
-          fill="white"
-        />
-        <path
-          opacity="0.2"
-          d="M23.3015 94.6006L2.81514 89.9932C-0.9383 106.68 -0.938447 124.192 2.81513 140.879L23.3015 136.271C20.2287 122.611 20.2287 108.261 23.3015 94.6006Z"
-          fill="white"
-        />
-        <path
-          opacity="0.5"
-          d="M179.551 46.0649L193.784 30.6269C181.21 19.0331 166.043 10.2766 149.715 5.18407L143.463 25.2299C156.83 29.3988 169.257 36.5739 179.551 46.0649Z"
-          fill="white"
-        />
-        <path
-          opacity="0.05"
-          d="M51.3264 184.814L37.0931 200.252C49.6673 211.846 64.8338 220.602 81.1615 225.695L87.4136 205.649C74.0474 201.48 61.6199 194.305 51.3264 184.814Z"
-          fill="white"
-        />
-        <path
-          opacity="0.8"
-          d="M184.814 179.549L200.252 193.782C211.846 181.208 220.602 166.041 225.695 149.714L205.649 143.461C201.48 156.828 194.305 169.255 184.814 179.549Z"
-          fill="white"
-        />
-        <path
-          opacity="0.3"
-          d="M46.063 51.3264L30.625 37.0931C19.0312 49.6673 10.2747 64.8338 5.18212 81.1615L25.228 87.4136C29.3969 74.0474 36.5719 61.6199 46.063 51.3264Z"
-          fill="white"
-        />
-        <path
-          opacity="0.6"
-          d="M205.649 87.4164L225.694 81.1634C220.602 64.8358 211.845 49.6692 200.251 37.0951L184.814 51.3292C194.305 61.6227 201.48 74.0502 205.649 87.4164Z"
-          fill="white"
-        />
-        <path
-          opacity="0.1"
-          d="M25.228 143.462L5.18261 149.715C10.2753 166.043 19.0315 181.21 30.6255 193.784L46.063 179.55C36.5719 169.256 29.3969 156.829 25.228 143.462Z"
-          fill="white"
-        />
-        <path
-          opacity="0.9"
-          d="M143.462 205.651L149.715 225.696C166.043 220.604 181.21 211.847 193.784 200.253L179.55 184.816C169.256 194.307 156.829 201.482 143.462 205.651Z"
-          fill="white"
-        />
-        <path
-          opacity="0.35"
-          d="M87.4145 25.228L81.1615 5.18261C64.8338 10.2753 49.6672 19.0315 37.0931 30.6255L51.3273 46.063C61.6207 36.5719 74.0483 29.3969 87.4145 25.228Z"
-          fill="white"
-        />
+        <path fill="white">
+          <animate
+            attributeName="d"
+            dur="5s"
+            repeatCount="indefinite"
+            values="
+            M230 115C230 178.513 178.513 230 115 230 178.49 229.996 230 178.514 230 115 230.001 51.493 178.515.003 115 0 178.513 0 230 51.4873 230 115Z;
+            M230 115C230 178.513 178.513 230 115 230C51.4873 230 0 178.513 0 115C0 51.4873 51.4873 0 115 0C178.513 0 230 51.4873 230 115Z;
+            M.013 114.997C-.015 178.496 50.824 230.238 115 230 50.827 230.244 0 178.513 0 115 0 51.4873 51.4873 0 115 0 51.501-.019-.001 51.488.016 115Z;
+            "
+          />
+        </path>
       </svg>
       <svg
         class="wolf"
@@ -112,7 +57,7 @@ export class WolfAnim extends HTMLElement {
         fill="none"
         viewBox="0 0 200 150"
       >
-        <path fill="#fff">
+        <path fill="#000">
           <animate
             attributeName="d"
             dur="5s"
@@ -134,4 +79,4 @@ export class WolfAnim extends HTMLElement {
   connectedCallback() {}
 }
 
-customElements.define('wolf-anim2', WolfAnim)
+customElements.define('wolf-anim4', WolfAnim)
